@@ -1,6 +1,5 @@
 package com.csx.springtest.example2.resource;
 
-import org.aspectj.util.FileUtil;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.EncodedResource;
@@ -17,7 +16,7 @@ import java.io.IOException;
  */
 public class EncodedResourceExample {
     public static void main(String[] args) throws IOException {
-        Resource resource = new ClassPathResource("conf/file1.txt");
+        Resource resource = new ClassPathResource("com.csx.springtest.example2.conf/file1.txt");
 
         EncodedResource encodedResource=new EncodedResource(resource,"UTF-8");
 

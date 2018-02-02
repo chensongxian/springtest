@@ -23,7 +23,7 @@ public class BeanFactoryTest {
     @Test
     public void getBean() throws IOException {
         ResourcePatternResolver resolver=new PathMatchingResourcePatternResolver();
-        Resource resource = resolver.getResource("classpath:beans.xml");
+        Resource resource = resolver.getResource("classpath:com/csx/springtest/example2/beans.xml");
 
         System.out.println(resource.getURL());
 

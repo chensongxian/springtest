@@ -16,7 +16,7 @@ import org.springframework.context.support.GenericGroovyApplicationContext;
 public class GroovyApplicationContext {
     @Test
     public void getBean(){
-        ApplicationContext applicationContext=new GenericGroovyApplicationContext("classpath:groovy-beans.groovy");
+        ApplicationContext applicationContext=new GenericGroovyApplicationContext("classpath:com/csx/springtest/example2/groovy-beans.groovy");
 
         Car car=applicationContext.getBean("car",Car.class);
 

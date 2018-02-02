@@ -1,6 +1,5 @@
 package com.csx.springtest.example2.resource;
 
-import com.sun.xml.internal.messaging.saaj.util.ByteInputStream;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.PathResource;
 import org.springframework.core.io.Resource;
@@ -20,11 +19,11 @@ import java.io.OutputStream;
  */
 public class FileSourceExample {
     public static void main(String[] args) throws IOException {
-        String filePath="F:\\idea\\springtest\\src\\main\\resources\\conf\\file1.txt";
+        String filePath="F:\\idea\\springtest\\src\\main\\resources\\com.csx.springtest.example2.conf\\file1.txt";
 
         WritableResource wr=new PathResource(filePath);
 
-        Resource re=new ClassPathResource("conf/file1.txt");
+        Resource re=new ClassPathResource("com.csx.springtest.example2.conf/file1.txt");
 
         OutputStream outputStream = wr.getOutputStream();
 

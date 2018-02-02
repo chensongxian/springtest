@@ -22,7 +22,7 @@ public class BeanLifeCycle {
 
 
         //1.下面两句装载配置文件并启动容器
-        Resource res = new ClassPathResource("beans.xml");
+        Resource res = new ClassPathResource("com/csx/springtest/example2/beans.xml");
 
         BeanFactory bf= new DefaultListableBeanFactory();
         XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader((DefaultListableBeanFactory)bf);

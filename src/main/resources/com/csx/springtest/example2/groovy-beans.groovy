@@ -1,3 +1,5 @@
+package com.csx.springtest.example2
+
 import com.csx.springtest.example2.Car
 
 beans{
