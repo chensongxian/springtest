@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="lazyInitCar" class="com.csx.springtest.example3.scope.Car" lazy-init="true"/>
+    <bean id="singletonCar" class="com.csx.springtest.example3.scope.Car" scope="singleton"/>
+    <bean id="prototypeCar" class="com.csx.springtest.example3.scope.Car" scope="prototype"/>
+    <bean id="boss1" class="com.csx.springtest.example3.scope.Boss" p:car-ref="lazyInitCar" lazy-init="true"/>
+    <!--<bean id="boss2" class="com.csx.springtest.example3.scope.Boss" p:car-ref="singletonCar" scope="prototype"/>-->
+    <!--<bean id="boss3" class="com.csx.springtest.example3.scope.Boss" p:car-ref="singletonCar"/>-->
+
+    <!--<bean id="prototypeBoss" class="com.csx.springtest.example3.scope.Boss" lazy-init="true"/>-->
+</beans>

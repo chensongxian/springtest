@@ -8,6 +8,20 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath:smart-context.xml</param-value>
     </context-param>
+    <!--web容器配置-->
+
+    <!--低版本web容器配置,servlet2.3之前-->
+    <!--
+    <filter>
+        <filter-name>requestContextFilter</filter-name>
+        <filter-class>org.springframework.web.filter.RequestContextFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>requestContextFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    -->
+    <!--高版本web容器配置-->
     <listener>
         <listener-class>
             org.springframework.web.context.ContextLoaderListener
