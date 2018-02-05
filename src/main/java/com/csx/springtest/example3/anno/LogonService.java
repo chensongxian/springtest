@@ -15,11 +15,13 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class LogonService implements BeanNameAware {
+    /**@Lazy注解必须同时标注在属性及目标Bean上*/
     @Lazy
     @Autowired(required=false)
     private LogDao logDao;
 
 
+    /**@Qualifier指定注入bean的名称*/
     @Autowired
     @Qualifier("userDao")
     private UserDao userDao;

@@ -33,6 +33,9 @@ public class Boss {
         this.car = car;
     }
 
+    /**
+     * @PostConstruct相当于init-method方法
+     */
     @PostConstruct
     private void init1(){
         System.out.println("execute in init1");
@@ -43,6 +46,9 @@ public class Boss {
         System.out.println("execute in init1");
     }
 
+    /**
+     * @PreDestroy相当于destory-method方法
+     */
     @PreDestroy
     private void destory1(){
         System.out.println("execute in destory1");

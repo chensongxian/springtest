@@ -20,6 +20,6 @@ public class AnnoTest {
 
         MyComponent myComponent=context.getBean("myComponent",MyComponent.class);
 
-        Assertions.assertNotNull(myComponent);
+        Assertions.assertNotNull(myComponent.getPlugins());
     }
 }
