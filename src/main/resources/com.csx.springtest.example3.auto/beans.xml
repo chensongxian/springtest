@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="office" class="com.csx.springtest.example3.auto.Office"/>
+    <!--关闭自动注入-->
+    <bean id="office1" class="com.csx.springtest.example3.auto.Office" autowire-candidate="false"/>
+    <bean id="boss" class="com.csx.springtest.example3.auto.Boss" autowire="constructor">
+        <constructor-arg index="0" value="John"/>
+    </bean>
+
+    <bean id="car" class="com.csx.springtest.example3.auto.Car" scope="singleton">
+        <property name="brand" value="红旗CA72"/>
+        <property name="price" value="2000"/>
+    </bean>
+
+</beans>
