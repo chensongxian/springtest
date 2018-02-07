@@ -17,10 +17,26 @@ import java.util.Map;
 public class MyComponent {
     @Autowired(required=false)
     private List<Plugin> plugins;
+
+    @Autowired
+    private Plugin[] pluginArr;
+
     @Autowired
     private Map<String,Plugin> pluginMaps;
 
     public List<Plugin> getPlugins() {
         return plugins;
+    }
+
+    public void say(){
+        for(Plugin plugin:plugins){
+            System.out.println("list: "+plugin.getClass().getName());
+        }
+
+        System.out.println("--------------");
+
+        for(Plugin plugin:pluginArr){
+            System.out.println("array: "+plugin.getClass().getName());
+        }
     }
 }

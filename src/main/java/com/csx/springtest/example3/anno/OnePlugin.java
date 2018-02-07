@@ -1,5 +1,7 @@
 package com.csx.springtest.example3.anno;
 
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.context.annotation.Scope;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
@@ -13,7 +15,5 @@ import org.springframework.stereotype.Component;
 @Component
 @Order(value = 2)
 public class OnePlugin implements Plugin{
-    public OnePlugin() {
-        System.out.println("first plugin");
-    }
+
 }

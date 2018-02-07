@@ -14,6 +14,11 @@ import org.springframework.stereotype.Repository;
 @Lazy
 @Repository
 public class LogDao implements InitializingBean{
+
+    public LogDao() {
+        System.out.println("create LogDao");
+    }
+
     @Override
     public void afterPropertiesSet() throws Exception {
         System.out.println("LogDao....");
