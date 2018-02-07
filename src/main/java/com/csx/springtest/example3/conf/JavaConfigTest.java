@@ -63,4 +63,16 @@ public class JavaConfigTest {
         logonService.printHelllo();
     }
 
+    /**
+     * 测试基于java类的配置引用xml中的配置
+     */
+    @Test
+    public void testJavaCOnfigRefXml(){
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(LogonAppConfig.class);
+
+        LogonService logonService = ctx.getBean(LogonService.class);
+        Assertions.assertNotNull(logonService.getLogDao());
+        logonService.printHelllo();
+    }
+
 }
