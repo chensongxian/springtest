@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="greetingBeforeAdvice" class="com.csx.springtest.example5.advice.GreetingBeforeAdvice"/>
+
+    <bean id="greetingAfterAdvice" class="com.csx.springtest.example5.advice.GreetingAfterAdvice"/>
+
+    <bean id="greetingInterceptor" class="com.csx.springtest.example5.advice.GreetingInterceptor"/>
+
+    <bean id="target" class="com.csx.springtest.example5.advice.NaiveWaiter"/>
+
+    <bean id="waiterOfBefore" class="org.springframework.aop.framework.ProxyFactoryBean"
+        p:proxyInterfaces="com.csx.springtest.example5.advice.Waiter"
+        p:target-ref="target"
+        p:interceptorNames="greetingBeforeAdvice">
+    </bean>
+
+    <bean id="waiterOfAfter" class="org.springframework.aop.framework.ProxyFactoryBean"
+        p:proxyInterfaces="com.csx.springtest.example5.advice.Waiter"
+        p:target-ref="target"
+        p:interceptorNames="greetingAfterAdvice">
+    </bean>
+
+    <bean id="waiterOfAround" class="org.springframework.aop.framework.ProxyFactoryBean"
+          p:proxyInterfaces="com.csx.springtest.example5.advice.Waiter"
+          p:target-ref="target"
+          p:interceptorNames="greetingInterceptor">
+    </bean>
+
+
+    <!--4. 异常抛出增强  -->
+    <bean id="forumServiceTarget" class="com.csx.springtest.example5.advice.ForumService" />
+    <bean id="transactionManager" class="com.csx.springtest.example5.advice.TransactionManager" />
+    <bean id="forumService" class="org.springframework.aop.framework.ProxyFactoryBean"
+          p:interceptorNames="transactionManager"
+          p:target-ref="forumServiceTarget"
+          p:proxyTargetClass="true"/>
+</beans>
