@@ -1,5 +1,7 @@
 package com.csx.springtest.example5.advisor;
 
+import com.csx.springtest.example5.introduce.ForumService;
+import com.csx.springtest.example5.introduce.Monitorable;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -76,5 +78,39 @@ public class AdvisorTest {
         waiter.greetTo("waiter3");
 
         waiterDelegate.service("waiter3");
+    }
+
+    /**
+     * 测试复合切点切面
+     */
+    @Test
+    public void testComposablePointcut(){
+        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example5.advisor/beans.xml");
+
+        Waiter waiter=context.getBean("waiter4",Waiter.class);
+
+        waiter.greetTo("waiter4");
+
+        System.out.println("---------");
+        WaiterDelegate wd=new WaiterDelegate();
+
+        wd.setWaiter(waiter);
+
+        wd.service("test");
+    }
+
+    @Test
+    public void testIntroduce(){
+        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example5.advisor/beans.xml");
+
+        ForumService forumService=context.getBean("forumService", ForumService.class);
+
+        forumService.removeForum(1);
+
+        System.out.println("--------------");
+        Monitorable monitorable= (Monitorable) forumService;
+        monitorable.setMonitorActive(true);
+
+        forumService.removeForum(1);
     }
 }
