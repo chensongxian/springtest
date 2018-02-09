@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+    <bean id="testAdvice" class="com.csx.springtest.example6.schema.TestBeforeAdvice"/>
+    <bean id="adviceMethods" class="com.csx.springtest.example6.schema.AdviceMethods" />
+    <bean id="naiveWaiter" class="com.csx.springtest.example6.NaiveWaiter" />
+    <bean id="naughtyWaiter" class="com.csx.springtest.example6.NaughtyWaiter" />
+    <bean id="seller" class="com.csx.springtest.example6.SmartSeller" />
+
+    <aop:config proxy-target-class="true">
+        <aop:advisor advice-ref="testAdvice"  pointcut="execution(* com..*.Waiter.greetTo(..))"/>
+        <aop:aspect ref="adviceMethods">
+            <aop:before method="preGreeting"
+                        pointcut="target(com.csx.springtest.example6.NaiveWaiter) and args(name)"
+                        arg-names="name" />
+            <aop:after-returning method="afterReturning"
+                                 pointcut="target(com.csx.springtest.example6.SmartSeller)" returning="retVal" />
+            <aop:around method="aroundMethod"
+                        pointcut="execution(* serveTo(..)) and within(com.csx.springtest.example6.Waiter)" />
+            <aop:after-throwing method="afterThrowingMethod"
+                                pointcut="target(com.csx.springtest.example6.SmartSeller) and execution(* checkBill(..))"
+                                throwing="iae" />
+            <aop:after method="afterMethod"
+                       pointcut="execution(* com..*.Waiter.greetTo(..))" />
+            <aop:declare-parents
+                    implement-interface="com.csx.springtest.example6.Seller"
+                    default-impl="com.csx.springtest.example6.SmartSeller"
+                    types-matching="com.csx.springtest.example6.Waiter+" />
+            <aop:before method="bindParams"
+                        pointcut="target(com.csx.springtest.example6.NaiveWaiter) and args(name,num,..)"/>
+        </aop:aspect>
+    </aop:config>
+</beans>
