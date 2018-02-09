@@ -1,6 +1,5 @@
 package com.csx.springtest.example4.i18n;
 
-import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -18,7 +17,7 @@ import java.util.Locale;
 public class I18nGreeting {
 //    @Test
     public static void rsrBdlMessageResource(){
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("com.csx.springtest.example4.i18n/beans.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("com/csx/springtest/example4/i18n/beans.xml");
 
         MessageSource ms = (MessageSource)ctx.getBean("myResource1");
         Object[] params = {"John", new GregorianCalendar().getTime()};
