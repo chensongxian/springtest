@@ -18,7 +18,7 @@ public class Test {
      * @param args
      */
     public static void main(String[] args) {
-        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example3.impt/beans2.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/csx/springtest/example3/impt/beans2.xml");
 
         Car car1 = context.getBean("car1", Car.class);
 

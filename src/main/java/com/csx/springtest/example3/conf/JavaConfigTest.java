@@ -45,7 +45,7 @@ public class JavaConfigTest {
      */
     @Test
     public void testLoadContextByXml(){
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("com.csx.springtest.example3.conf/beans2.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("com/csx/springtest/example3/conf/beans2.xml");
 
         LogonService logonService = ctx.getBean("logonService", LogonService.class);
 

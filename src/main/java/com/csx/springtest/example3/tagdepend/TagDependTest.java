@@ -19,7 +19,7 @@ public class TagDependTest {
      */
     @Test
     public void testExtend(){
-        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example3.tagdepend/beans.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/csx/springtest/example3/tagdepend/beans.xml");
 
         Car car=context.getBean("subCar1",Car.class);
 
@@ -43,7 +43,7 @@ public class TagDependTest {
      */
     @Test
     public void testDependOn(){
-        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example3.tagdepend/beans.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/csx/springtest/example3/tagdepend/beans.xml");
 
         CacheManager cacheManager=context.getBean("cacheManager",CacheManager.class);
 
@@ -55,7 +55,7 @@ public class TagDependTest {
      */
     @Test
     public void testIdref(){
-        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example3.tagdepend/beans.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/csx/springtest/example3/tagdepend/beans.xml");
 
         Boss boss=context.getBean("boss",Boss.class);
 

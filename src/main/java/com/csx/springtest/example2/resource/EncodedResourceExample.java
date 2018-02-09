@@ -16,7 +16,7 @@ import java.io.IOException;
  */
 public class EncodedResourceExample {
     public static void main(String[] args) throws IOException {
-        Resource resource = new ClassPathResource("com.csx.springtest.example2.conf/file1.txt");
+        Resource resource = new ClassPathResource("com/csx/springtest/example2/conf/file1.txt");
 
         EncodedResource encodedResource=new EncodedResource(resource,"UTF-8");
 

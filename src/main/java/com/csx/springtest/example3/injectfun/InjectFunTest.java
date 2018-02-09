@@ -23,7 +23,7 @@ public class InjectFunTest {
      */
     @Test
     public void testLookUpMethod(){
-        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example3.injectfun/beans.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/csx/springtest/example3/injectfun/beans.xml");
 
 
         /*
@@ -55,7 +55,7 @@ public class InjectFunTest {
      */
     @Test
     public void testReplacer(){
-        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example3.injectfun/beans.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/csx/springtest/example3/injectfun/beans.xml");
 
         Boss1 boss1 = context.getBean("boss1", Boss1.class);
 

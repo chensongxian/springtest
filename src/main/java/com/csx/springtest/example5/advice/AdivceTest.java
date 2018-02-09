@@ -2,11 +2,8 @@ package com.csx.springtest.example5.advice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.aop.framework.ProxyFactory;
-import org.springframework.cglib.proxy.Proxy;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import java.awt.event.WindowAdapter;
 
 /**
  * Created with IntelliJ IDEA.
@@ -50,7 +47,7 @@ public class AdivceTest {
      */
     @Test
     public void testAfter(){
-        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example5.adivce/beans.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/csx/springtest/example5/advice/beans.xml");
 
         Waiter waiter=context.getBean("waiterOfBefore",Waiter.class);
 
@@ -59,7 +56,7 @@ public class AdivceTest {
 
     @Test
     public void testThrowAdivce(){
-        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example5.adivce/beans.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/csx/springtest/example5/advice/beans.xml");
 
         ForumService forumService = context.getBean("forumService", ForumService.class);
 

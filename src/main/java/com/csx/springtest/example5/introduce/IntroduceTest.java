@@ -15,7 +15,7 @@ public class IntroduceTest {
 
     @Test
     public void testIntroduce(){
-        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example5.introduce/beans.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/csx/springtest/example5/introduce/beans.xml");
 
         ForumService forumService = context.getBean("forumService", ForumService.class);
 

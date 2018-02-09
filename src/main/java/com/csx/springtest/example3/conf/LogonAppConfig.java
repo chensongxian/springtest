@@ -13,7 +13,7 @@ import org.springframework.context.annotation.ImportResource;
  * @Date: 2018/02/07
  */
 @Configuration
-@ImportResource("classpath:com.csx.springtest.example3.conf/beans3.xml")
+@ImportResource("classpath:com/csx/springtest/example3/conf/beans3.xml")
 public class LogonAppConfig {
     @Bean
     @Autowired

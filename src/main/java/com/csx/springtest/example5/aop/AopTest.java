@@ -20,7 +20,7 @@ public class AopTest {
      */
     @Test
     public void testBeanNameAutoProxyCreator(){
-        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example5.autoproxy/beans.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/csx/springtest/example5/autoproxy/beans.xml");
 
         Waiter waiter = context.getBean("waiter", Waiter.class);
 
@@ -36,7 +36,7 @@ public class AopTest {
      */
     @Test
     public void testDefaultAdvisorAutoProxyCreator(){
-        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example5.autoproxy/beans.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/csx/springtest/example5/autoproxy/beans.xml");
 
         Waiter waiter = context.getBean("waiter", Waiter.class);
 
@@ -53,7 +53,7 @@ public class AopTest {
      */
     @Test
     public void testNoProxy(){
-        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example5.autoproxy/beans-aware.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/csx/springtest/example5/autoproxy/beans-aware.xml");
 
         com.csx.springtest.example5.aop.Waiter waiter = context.getBean("waiter", com.csx.springtest.example5.aop.Waiter.class);
 

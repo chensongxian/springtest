@@ -20,7 +20,7 @@ public class AdvisorTest {
      */
     @Test
     public void testAdvisor(){
-        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example5.advisor/beans.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/csx/springtest/example5/advisor/beans.xml");
 
         Waiter waiter = context.getBean("waiter", Waiter.class);
         Seller seller = context.getBean("seller", Seller.class);
@@ -36,7 +36,7 @@ public class AdvisorTest {
      */
     @Test
     public void testRegexpAdvisor(){
-        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example5.advisor/beans.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/csx/springtest/example5/advisor/beans.xml");
 
         Waiter waiter = context.getBean("waiter1", Waiter.class);
 
@@ -52,7 +52,7 @@ public class AdvisorTest {
      */
     @Test
     public void testDynamicPointcut(){
-        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example5.advisor/beans.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/csx/springtest/example5/advisor/beans.xml");
 
         Waiter waiter=context.getBean("waiter2",Waiter.class);
 
@@ -67,7 +67,7 @@ public class AdvisorTest {
      */
     @Test
     public void testControlFlowPointcut(){
-        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example5.advisor/beans.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/csx/springtest/example5/advisor/beans.xml");
 
         Waiter waiter=context.getBean("waiter3",Waiter.class);
 
@@ -85,7 +85,7 @@ public class AdvisorTest {
      */
     @Test
     public void testComposablePointcut(){
-        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example5.advisor/beans.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/csx/springtest/example5/advisor/beans.xml");
 
         Waiter waiter=context.getBean("waiter4",Waiter.class);
 
@@ -101,7 +101,7 @@ public class AdvisorTest {
 
     @Test
     public void testIntroduce(){
-        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example5.advisor/beans.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/csx/springtest/example5/advisor/beans.xml");
 
         ForumService forumService=context.getBean("forumService", ForumService.class);
 

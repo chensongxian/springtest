@@ -18,7 +18,7 @@ public class ApplicationEventTest {
      */
     @Test
     public void  testApplicationEvent(){
-        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example4.event/beans.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/csx/springtest/example4/event/beans.xml");
 
         MailSender mailSender = context.getBean("mailSender", MailSender.class);
 

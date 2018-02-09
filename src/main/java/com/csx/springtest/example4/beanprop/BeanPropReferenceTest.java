@@ -17,7 +17,7 @@ import java.sql.Connection;
  */
 public class BeanPropReferenceTest {
     public static void main(String[] args) throws Throwable {
-        String resourceFile = "com.csx.springtest.example4.beanprop/beans.xml";
+        String resourceFile = "com/csx/springtest/example4/beanprop/beans.xml";
         ApplicationContext ctx = new ClassPathXmlApplicationContext(resourceFile);
         DataSource ds = ctx.getBean("dataSource",BasicDataSource.class);
         Connection conn = ds.getConnection();

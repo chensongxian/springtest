@@ -17,7 +17,7 @@ public class ScopeTest {
      */
     @Test
     public void testSingletonScope(){
-        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example3.scope/beans.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/csx/springtest/example3/scope/beans.xml");
 
         Car car1=context.getBean("singletonCar",Car.class);
         Car car2=context.getBean("singletonCar",Car.class);
@@ -42,7 +42,7 @@ public class ScopeTest {
      */
     @Test
     public void testPrototypeScope(){
-        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example3.scope/beans.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/csx/springtest/example3/scope/beans.xml");
 
         Car car1=context.getBean("prototypeCar",Car.class);
         Car car2=context.getBean("prototypeCar",Car.class);
@@ -61,7 +61,7 @@ public class ScopeTest {
      */
     @Test
     public void testLazyInit(){
-        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example3.scope/beans.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/csx/springtest/example3/scope/beans.xml");
 
         Boss boss1=context.getBean("boss1",Boss.class);
 

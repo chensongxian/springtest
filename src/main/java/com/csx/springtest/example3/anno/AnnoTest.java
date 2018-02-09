@@ -3,7 +3,6 @@ package com.csx.springtest.example3.anno;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -19,7 +18,7 @@ public class AnnoTest{
      */
     @Test
     public void testOrder(){
-        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example3.anno/beans.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/csx/springtest/example3/anno/beans.xml");
 
         MyComponent myComponent=context.getBean("myComponent",MyComponent.class);
 
@@ -37,7 +36,7 @@ public class AnnoTest{
      */
     @Test
     public void testLazy(){
-        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example3.anno/beans.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/csx/springtest/example3/anno/beans.xml");
 
         LogonService logonService=context.getBean("logonService",LogonService.class);
 
@@ -57,7 +56,7 @@ public class AnnoTest{
      */
     @Test
     public void testBeanLifeMethod(){
-        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example3.anno/beans.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/csx/springtest/example3/anno/beans.xml");
 
         Boss boss=context.getBean("boss",Boss.class);
 

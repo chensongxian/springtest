@@ -17,7 +17,7 @@ public class AttrTest {
      */
     @Test
     public void testEscapeString(){
-        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example3.attr/beans.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/csx/springtest/example3/attr/beans.xml");
 
         Car car=context.getBean("car",Car.class);
 
@@ -30,9 +30,9 @@ public class AttrTest {
      */
     @Test
     public void testParentContext(){
-        ClassPathXmlApplicationContext parentContext = new ClassPathXmlApplicationContext("com.csx.springtest.example3.attr/beans1.xml");
+        ClassPathXmlApplicationContext parentContext = new ClassPathXmlApplicationContext("com/csx/springtest/example3/attr/beans1.xml");
 
-        ApplicationContext context=new ClassPathXmlApplicationContext(new String[]{"com.csx.springtest.example3.attr/beans2.xml"},parentContext);
+        ApplicationContext context=new ClassPathXmlApplicationContext(new String[]{"com/csx/springtest/example3/attr/beans2.xml"},parentContext);
 
         Boss boss=context.getBean("boss",Boss.class);
 

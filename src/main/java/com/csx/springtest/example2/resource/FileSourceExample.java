@@ -23,7 +23,7 @@ public class FileSourceExample {
 
         WritableResource wr=new PathResource(filePath);
 
-        Resource re=new ClassPathResource("com.csx.springtest.example2.conf/file1.txt");
+        Resource re=new ClassPathResource("com/csx/springtest/example2/conf/file1.txt");
 
         OutputStream outputStream = wr.getOutputStream();
 

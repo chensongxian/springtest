@@ -19,7 +19,7 @@ public class EditTest {
      */
     @Test
     public void testEdit(){
-        ApplicationContext context=new ClassPathXmlApplicationContext("com.csx.springtest.example4.edit/beans.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("com/csx/springtest/example4/edit/beans.xml");
 
         Boss boss = context.getBean("boss", Boss.class);
 
