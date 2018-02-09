@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="pmonitor" class="com.csx.springtest.example5.introduce.ControllablePerformaceMonitor"/>
+    <bean id="forumServiceTarget" class="com.csx.springtest.example5.introduce.ForumService"/>
+
+    <!--
+        p:interfaces引介增强实现的接口
+        引介增强一定要通过创建子类生成代理
+        必须强制使用cglib
+        设置 p:proxyTargetClass="true"
+    -->
+    <bean id="forumService" class="org.springframework.aop.framework.ProxyFactoryBean"
+          p:interfaces="com.csx.springtest.example5.introduce.Monitorable"
+          p:interceptorNames="pmonitor"
+          p:target-ref="forumServiceTarget"
+          p:proxyTargetClass="true">
+
+    </bean>
+</beans>
