@@ -66,11 +66,11 @@
     <bean id="emailProps"
           class="org.springframework.beans.factory.config.PropertiesFactoryBean">
         <property name="location"
-                  value="classpath:com.csx.springtest.example3.fb/mails.properties">
+                  value="classpath:com/csx/springtest/example3/fb/mails.properties">
         </property>
     </bean>
     <util:properties id="emailProps1"
-                     location="classpath:com.csx.springtest.example3.fb/mails.properties" />
+                     location="classpath:com/csx/springtest/example3/fb/mails.properties" />
 
     <!-- 属性引用FactoryBean:常量 -->
     <bean id="car2" class="com.csx.springtest.example3.fb.Car">

@@ -6,7 +6,7 @@
   <bean id="myResource1" class="org.springframework.context.support.ResourceBundleMessageSource">
     <property name="basenames">
        <list>
-         <value>com.csx.springtest.example4.i18n/fmt_resource</value>
+         <value>com.csx.springtest.example4.i18n.fmt_resource</value>
        </list>
     </property>
   </bean> 
@@ -14,7 +14,7 @@
   <bean id="myResource2" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
     <property name="basenames">
        <list>
-         <value>com.csx.springtest.example4.i18n/fmt_resource</value>
+         <value>com.csx.springtest.example4.i18n.fmt_resource</value>
        </list>
     </property>
     <property name="cacheSeconds" value="2"/>
@@ -23,7 +23,7 @@
    <bean id="messageSource12" class="org.springframework.context.support.ResourceBundleMessageSource">
     <property name="basenames">
        <list>
-         <value>com.csx.springtest.example4.i18n/fmt_resource</value>
+         <value>com.csx.springtest.example4.i18n.fmt_resource</value>
        </list>
     </property>
   </bean>  

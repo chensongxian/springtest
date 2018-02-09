@@ -26,7 +26,7 @@
 
 	<!--3.使用加密版的属性文件  -->
 	<bean class="com.csx.springtest.example4.placeholder.EncryptPropertyPlaceholderConfigurer"
-	    p:location="classpath:com.csx.springtest.example4.placeholder/jdbc.properties"
+	    p:location="classpath:com/csx/springtest/example4/placeholder/jdbc.properties"
 		p:fileEncoding="utf-8"/>
 
     <context:component-scan base-package="com.csx.springtest.example4.placeholder"/>
