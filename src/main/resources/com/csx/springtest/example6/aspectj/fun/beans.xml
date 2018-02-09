@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+    <bean id="naiveWaiter" class="com.csx.springtest.example6.NaiveWaiter" />
+    <bean id="naughtyWaiter" class="com.csx.springtest.example6.NaughtyWaiter" />
+    <bean id="seller" class="com.csx.springtest.example6.SmartSeller" />
+    <bean id="waiterManager" class="com.csx.springtest.example6.WaiterManager"/>
+    <bean class="com.csx.springtest.example6.aspectj.fun.EnableSellerAspect"/>
+
+    <bean class="com.csx.springtest.example6.aspectj.fun.TestAspect"/>
+</beans>

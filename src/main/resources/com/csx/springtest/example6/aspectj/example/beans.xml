@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--目标bean
+    <bean id="waiter" class="com.csx.springtest.example6.NaiveWaiter"/>
+    使用@AspectJ注解的切面类
+    <bean class="com.csx.springtest.example6.aspectj.example.PreGreetingAspect"/>
+
+    自动代理创建器，将@AspectJ的切面类织入目标类中
+    <bean class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator"/>
+    -->
+
+    <!--基于@AspectJ的切面驱动器-->
+    <aop:aspectj-autoproxy/>
+    <bean id="waiter" class="com.csx.springtest.example6.NaiveWaiter"/>
+    <bean class="com.csx.springtest.example6.aspectj.example.PreGreetingAspect"/>
+
+</beans>
