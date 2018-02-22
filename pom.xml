@@ -96,6 +96,17 @@
             <version>RELEASE</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>${groovy.version}</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
@@ -140,6 +151,7 @@
         <hibernate.validator.version>5.0.2.Final</hibernate.validator.version>
         <jetty.version>8.1.8.v20121106</jetty.version>
         <slf4j.version>1.7.5</slf4j.version>
+        <groovy.version>2.3.6</groovy.version>
         <testng.version>6.8.7</testng.version>
     </properties>
 </project>
