@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <context:component-scan base-package="com.csx.springtest.example8.connleak"/>
+    <context:property-placeholder location="classpath:com/csx/springtest/example8/jdbc.properties"/>
+
+    <!--未被代理的数据源-->
+    <bean id="originDataSource" class="org.apache.commons.dbcp.BasicDataSource"
+          destroy-method="close"
+          p:driverClassName="${jdbc.driverClassName}"
+          p:url="${jdbc.url}"
+          p:username="${jdbc.username}"
+          p:password="${jdbc.password}"/>
+
+    <!--对数据源进行代理，使数据源具有事物上下文感知性-->
+    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy"
+          p:targetDataSource-ref="originDataSource" />
+
+    <bean id="jdbcTemplate"
+          class="org.springframework.jdbc.core.JdbcTemplate"
+          p:dataSource-ref="dataSource"/>
+
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+          p:dataSource-ref="dataSource"/>
+    <tx:annotation-driven/>
+</beans>
