@@ -6,7 +6,7 @@
     <!--目标bean
     <bean id="waiter" class="com.csx.springtest.example6.NaiveWaiter"/>
     使用@AspectJ注解的切面类
-    <bean class="com.csx.springtest.example6.aspectj.example.PreGreetingAspect"/>
+    <bean class="com.csx.springtest.example6.aspectj.example12.PreGreetingAspect"/>
 
     自动代理创建器，将@AspectJ的切面类织入目标类中
     <bean class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator"/>
