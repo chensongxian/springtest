@@ -19,7 +19,7 @@ public class QuickStartSpEl {
         System.out.println(message);
     }
 
-    //As an example of method invocation, we call the concat method on the string literal.
+    //As an example12 of method invocation, we call the concat method on the string literal.
     public static void concat() {
         ExpressionParser parser = new SpelExpressionParser();
         Expression exp = parser.parseExpression("'Hello World'.concat('!')");
@@ -27,7 +27,7 @@ public class QuickStartSpEl {
         System.out.println(message);
     }
 
-    //As an example of calling a JavaBean property, the String property Bytes can be called as shown below.
+    //As an example12 of calling a JavaBean property, the String property Bytes can be called as shown below.
     public static void bytes() {
         ExpressionParser parser = new SpelExpressionParser();
         // invokes getBytes()
