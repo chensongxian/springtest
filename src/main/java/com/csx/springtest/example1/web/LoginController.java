@@ -1,9 +1,14 @@
 package com.csx.springtest.example1.web;
 
+import com.csx.springtest.example1.dbrouter.DBContextHolder;
 import com.csx.springtest.example1.domain.User;
 import com.csx.springtest.example1.service.UserService;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,7 +21,9 @@ import java.util.Date;
  * @Author: csx
  * @Date: 2018/01/31
  */
+@Controller
 public class LoginController {
+    @Autowired
     private UserService userService;
 
     @RequestMapping(value = "/index.html")
@@ -41,8 +48,12 @@ public class LoginController {
         }
     }
 
-    @Autowired
-    public void setUserService(UserService userService) {
-        this.userService = userService;
+
+    @RequestMapping(value = "/test",method = RequestMethod.GET)
+    @ResponseBody
+    public void testDbRouter(){
+        System.out.println("xx");
+        DBContextHolder.setCustomerID(1L);
+        userService.testDbRouter();
     }
 }

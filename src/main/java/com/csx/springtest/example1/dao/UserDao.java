@@ -4,6 +4,7 @@ import com.csx.springtest.example1.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowCallbackHandler;
+import org.springframework.stereotype.Service;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,6 +16,7 @@ import java.sql.SQLException;
  * @Author: csx
  * @Date: 2018/01/31
  */
+@Service
 public class UserDao {
     private JdbcTemplate jdbcTemplate;
 

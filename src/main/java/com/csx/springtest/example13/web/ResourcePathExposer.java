@@ -1,8 +1,8 @@
 package com.csx.springtest.example13.web;
 
-import javax.servlet.ServletContext;
-
 import org.springframework.web.context.ServletContextAware;
+
+import javax.servlet.ServletContext;
 
 public class ResourcePathExposer implements ServletContextAware {
 	private ServletContext servletContext;

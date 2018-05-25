@@ -17,12 +17,11 @@
     <context:component-scan base-package="com.csx.springtest.example1.service"/>
     
     <!-- 配置数据源 -->
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
-		destroy-method="close" 
-		p:driverClassName="com.mysql.jdbc.Driver"
-		p:url="jdbc:mysql://localhost:3306/sampledb"
-		p:username="root"
-		p:password="123456" />
+	<bean id="dataSource" class= "com.csx.springtest.example1.dbrouter.DynamicDataSource">
+		<property name="addressConfig">
+			<value>classpath:data_source_config.json</value>
+		</property>
+	</bean>
 
 	<!-- 配置Jdbc模板  -->
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"
@@ -32,6 +31,12 @@
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
 		p:dataSource-ref="dataSource" />
+
+	<bean id="DataSourceAspect" class="com.csx.springtest.example1.dbrouter.DataSourceAspect" />
+	<aop:config>
+		<!--<aop:advisor pointcut="execution(* com.pagoda.eshop.customer.api.biz.*.*(..))" advice-ref="DataSourceAspect" />-->
+		<aop:advisor pointcut="execution(* com.csx.springtest.example1.service..*(..))" advice-ref="DataSourceAspect" />
+	</aop:config>
 		
 	<!-- 通过AOP配置提供事务增强，让service包下所有Bean的所有方法拥有事务 -->
 	<aop:config proxy-target-class="true">

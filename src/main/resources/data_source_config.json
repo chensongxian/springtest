@@ -1,0 +1,80 @@
+{
+	"maxDB":1,
+	"maxSlave":2,
+	"wrConfig":true,
+	"writerKey":["customer1"],
+	"readerKey":[
+		["customer1_s1","customer1_s2"]
+	],
+	"range":[
+		{
+			"beginValue":1,
+			"endValue":-1
+		}
+	],
+	"pagoda_customer_db":[
+		{
+			"key": "customer1",
+			"config": {
+				"driver": "com.mysql.jdbc.Driver",
+				"url": "jdbc:mysql://192.168.1.30:3306/v2_pagoda_customer1?characterEncoding=utf-8&characterSetResults=utf-8&useUnicode=false",
+				"user": "root",
+				"password": "1234",
+				"initialSize": 5,
+				"maxActive": 200,
+				"maxIdle": 10,
+				"minIdle": 10,
+				"maxWait": 500,
+				"timeBetweenEvictionRunsMillis":60000,
+				"minEvictableIdleTimeMillis":30000,
+				"validationQueryTimeout":30000,
+				"validationQuery":"SELECT 'x'",
+				"testWhileIdle":true,
+				"testOnBorrow":false,
+				"testOnReturn":false
+			}
+		},
+		{
+			"key": "customer1_s1",
+			"config": {
+				"driver": "com.mysql.jdbc.Driver",
+				"url": "jdbc:mysql://192.168.1.30:3306/v2_pagoda_customer1?characterEncoding=utf-8&characterSetResults=utf-8&useUnicode=false",
+				"user": "root",
+				"password": "1234",
+				"initialSize": 5,
+				"maxActive": 200,
+				"maxIdle": 10,
+				"minIdle": 10,
+				"maxWait": 500,
+				"timeBetweenEvictionRunsMillis":60000,
+				"minEvictableIdleTimeMillis":30000,
+				"validationQueryTimeout":30000,
+				"validationQuery":"SELECT 'x'",
+				"testWhileIdle":true,
+				"testOnBorrow":false,
+				"testOnReturn":false
+			}
+		},
+		{
+			"key": "customer1_s2",
+			"config": {
+				"driver": "com.mysql.jdbc.Driver",
+				"url": "jdbc:mysql://192.168.1.30:3306/v2_pagoda_customer1?characterEncoding=utf-8&characterSetResults=utf-8&useUnicode=false",
+				"user": "root",
+				"password": "1234",
+				"initialSize": 5,
+				"maxActive": 200,
+				"maxIdle": 10,
+				"minIdle": 10,
+				"maxWait": 500,
+				"timeBetweenEvictionRunsMillis":60000,
+				"minEvictableIdleTimeMillis":30000,
+				"validationQueryTimeout":30000,
+				"validationQuery":"SELECT 'x'",
+				"testWhileIdle":true,
+				"testOnBorrow":false,
+				"testOnReturn":false
+			}
+		}
+	]
+}

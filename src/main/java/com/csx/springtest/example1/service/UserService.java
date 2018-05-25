@@ -2,8 +2,10 @@ package com.csx.springtest.example1.service;
 
 import com.csx.springtest.example1.dao.LoginLogDao;
 import com.csx.springtest.example1.dao.UserDao;
+import com.csx.springtest.example1.dbrouter.DBContextHolder;
 import com.csx.springtest.example1.domain.LoginLog;
 import com.csx.springtest.example1.domain.User;
+import com.sun.org.apache.xalan.internal.xsltc.dom.SortingIterator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.stereotype.Service;
@@ -21,8 +23,11 @@ import org.springframework.transaction.support.DefaultTransactionDefinition;
  */
 @Service
 public class UserService {
+    @Autowired
     private DataSourceTransactionManager transactionManager;
+    @Autowired
     private UserDao userDao;
+    @Autowired
     private LoginLogDao loginLogDao;
 
 
@@ -34,6 +39,7 @@ public class UserService {
     }
 
     public User findUserByUserName(String userName) {
+        DBContextHolder.setCustomerID(1000L);
         return userDao.findUserByUserName(userName);
     }
 
@@ -59,20 +65,8 @@ public class UserService {
         }
     }
 
-    @Autowired
-    public void setTransactionManager(DataSourceTransactionManager transactionManager) {
-        this.transactionManager = transactionManager;
+    public  void testDbRouter(){
+        userDao.findUserByUserName("xxxxx");
     }
-
-    @Autowired
-    public void setUserDao(UserDao userDao) {
-        this.userDao = userDao;
-    }
-
-    @Autowired
-    public void setLoginLogDao(LoginLogDao loginLogDao) {
-        this.loginLogDao = loginLogDao;
-    }
-
 
 }
