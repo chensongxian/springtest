@@ -6,6 +6,13 @@ import org.springframework.expression.ExpressionParser;
 import org.springframework.expression.spel.standard.SpelExpressionParser;
 import org.springframework.expression.spel.support.StandardEvaluationContext;
 
+/**
+ * Created with IntelliJ IDEA.
+ *
+ * @Description: TODO
+ * @author: csx
+ * @Date: 2018-02-14
+ */
 public class OperatorExprSample {
     public static void main(String[] args) {
         User user = new User();
@@ -17,10 +24,10 @@ public class OperatorExprSample {
         String expression = "isVipMember('tom') && isVipMember('jony')";
         boolean trueValue = parser.parseExpression(expression).getValue(context, Boolean.class);
 
-         //OR
+        //OR
         trueValue = parser.parseExpression("true or false").getValue(Boolean.class);
 
-         // NOT
+        // NOT
         falseValue = parser.parseExpression("!true").getValue(Boolean.class);
 
 
@@ -29,8 +36,8 @@ public class OperatorExprSample {
 
 
         //关系操作符
-         trueValue = parser.parseExpression("2 == 2").getValue(Boolean.class);
-         falseValue = parser.parseExpression("2 < -5.0").getValue(Boolean.class);
+        trueValue = parser.parseExpression("2 == 2").getValue(Boolean.class);
+        falseValue = parser.parseExpression("2 < -5.0").getValue(Boolean.class);
         trueValue = parser.parseExpression("\"black\" < \"block\"").getValue(Boolean.class);
 
         //正则
@@ -60,6 +67,6 @@ public class OperatorExprSample {
         one = parser.parseExpression("8 / 5 % 2").getValue(Integer.class); // 1
         //优先级算术运算
         int minusTwentyOne = parser.parseExpression("1+2-3*8").getValue(Integer.class); // -21
-    }
 
+    }
 }

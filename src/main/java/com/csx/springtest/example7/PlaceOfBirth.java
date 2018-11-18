@@ -1,5 +1,12 @@
 package com.csx.springtest.example7;
 
+/**
+ * Created with IntelliJ IDEA.
+ *
+ * @Description: TODO
+ * @author: csx
+ * @Date: 2018-02-13
+ */
 public class PlaceOfBirth {
     private String city;
     private String country;

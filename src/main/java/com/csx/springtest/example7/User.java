@@ -1,139 +1,149 @@
 package com.csx.springtest.example7;
 
+import com.csx.springtest.example7.PlaceOfBirth;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Created with IntelliJ IDEA.
+ *
+ * @Description: TODO
+ * @author: csx
+ * @Date: 2018-02-13
+ */
 public class User implements Serializable{
-	private int userId;
-	private String userName;
-	private String password;
-	private int credits;
-	private String lastIp;
-	private Date lastVisit;
-	private PlaceOfBirth placeOfBirth;
-	private List interestsList;
-	private String interestsArray[];
-	private Map interestsMap;
 
-	public User() {
+    private static final long serialVersionUID = -5036006289031928911L;
 
-	}
+    private int userId;
+    private String userName;
+    private String password;
+    private int credits;
+    private String lastIp;
+    private Date lastVisit;
+    private PlaceOfBirth placeOfBirth;
+    private List interestsList;
+    private String interestsArray[];
+    private Map interestsMap;
 
-	public User(String userName) {
-		this.userName = userName;
-	}
+    public User() {
 
-	public String getLastIp() {
-		return lastIp;
-	}
-	public static String getLastIp2() {
-		return "ddddddd";
-	}
+    }
 
-	public void setLastIp(String lastIp) {
-		this.lastIp = lastIp;
-	}
+    public User(String userName) {
+        this.userName = userName;
+    }
 
-	public Date getLastVisit() {
-		return lastVisit;
-	}
+    public String getLastIp() {
+        return lastIp;
+    }
+    public static String getLastIp2() {
+        return "ddddddd";
+    }
 
-	public void setLastVisit(Date lastVisit) {
-		this.lastVisit = lastVisit;
-	}
+    public void setLastIp(String lastIp) {
+        this.lastIp = lastIp;
+    }
 
-	public int getUserId() {
-		return userId;
-	}
+    public Date getLastVisit() {
+        return lastVisit;
+    }
 
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
+    public void setLastVisit(Date lastVisit) {
+        this.lastVisit = lastVisit;
+    }
 
-	public String getUserName() {
-		return userName;
-	}
+    public int getUserId() {
+        return userId;
+    }
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public String getUserName() {
+        return userName;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
-	public int getCredits() {
-		return credits;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public void setCredits(int credits) {
-		this.credits = credits;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public PlaceOfBirth getPlaceOfBirth() {
-		return placeOfBirth;
-	}
+    public int getCredits() {
+        return credits;
+    }
 
-	public void setPlaceOfBirth(PlaceOfBirth placeOfBirth) {
-		this.placeOfBirth = placeOfBirth;
-	}
+    public void setCredits(int credits) {
+        this.credits = credits;
+    }
 
-	public boolean isVipMember(String userName){
-         return "tom".equals(userName) || "jony".equals(userName);
-	}
+    public PlaceOfBirth getPlaceOfBirth() {
+        return placeOfBirth;
+    }
 
-	public boolean validatePassword(String password){
-         return "123456".equals(password);
-	}
+    public void setPlaceOfBirth(PlaceOfBirth placeOfBirth) {
+        this.placeOfBirth = placeOfBirth;
+    }
 
-	private boolean validatePassword2(String password){
-		return "123456".equals(password);
-	}
+    public boolean isVipMember(String userName){
+        return "tom".equals(userName) || "jony".equals(userName);
+    }
 
-	public static boolean validatePassword3(String password){
-		return "123456".equals(password);
-	}
+    public boolean validatePassword(String password){
+        return "123456".equals(password);
+    }
 
-	public  void addInterests(String... interests){
-		if(interestsList==null){
-			   interestsList = new ArrayList();
-		}
-		for(String interest:interests) {
-			interestsList.add(interest);
-		}
-	}
+    private boolean validatePassword2(String password){
+        return "123456".equals(password);
+    }
 
+    public static boolean validatePassword3(String password){
+        return "123456".equals(password);
+    }
 
-	public List getInterestsList() {
-		return interestsList;
-	}
-
-	public void setInterestsList(List interestsList) {
-		this.interestsList = interestsList;
-	}
-
-	public Map getInterestsMap() {
-		return interestsMap;
-	}
-
-	public void setInterestsMap(Map interestsMap) {
-		this.interestsMap = interestsMap;
-	}
-
-	public String[] getInterestsArray() {
-		return interestsArray;
-	}
-
-	public void setInterestsArray(String[] interestsArray) {
-		this.interestsArray = interestsArray;
-	}
+    public  void addInterests(String... interests){
+        if(interestsList==null){
+            interestsList = new ArrayList();
+        }
+        for(String interest:interests) {
+            interestsList.add(interest);
+        }
+    }
 
 
+    public List getInterestsList() {
+        return interestsList;
+    }
+
+    public void setInterestsList(List interestsList) {
+        this.interestsList = interestsList;
+    }
+
+    public Map getInterestsMap() {
+        return interestsMap;
+    }
+
+    public void setInterestsMap(Map interestsMap) {
+        this.interestsMap = interestsMap;
+    }
+
+    public String[] getInterestsArray() {
+        return interestsArray;
+    }
+
+    public void setInterestsArray(String[] interestsArray) {
+        this.interestsArray = interestsArray;
+    }
 }
