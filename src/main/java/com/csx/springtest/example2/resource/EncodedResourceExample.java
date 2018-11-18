@@ -10,7 +10,7 @@ import java.io.IOException;
 /**
  * Created with IntelliJ IDEA.
  *
- * @Description: TODO
+ * @Description: 编码资源读取器
  * @Author: csx
  * @Date: 2018/02/01
  */

@@ -9,7 +9,7 @@ import java.io.IOException;
 /**
  * Created with IntelliJ IDEA.
  *
- * @Description: TODO
+ * @Description: spring资源加载器
  * @Author: csx
  * @Date: 2018/02/01
  */
@@ -17,6 +17,11 @@ public class PatternResolverTest {
     public static void main(String[] args) throws IOException {
         ResourcePatternResolver resolver=new PathMatchingResourcePatternResolver();
 
+        /*
+         *  ?: 匹配文件名中的一个字符
+         *  *: 匹配文件名中的任意字符
+         *  **: 匹配多层路径
+         */
         Resource[] resources = resolver.getResources("classpath*:*.xml");
 
         for(Resource resource:resources){

@@ -7,7 +7,7 @@ import java.lang.reflect.Method;
 /**
  * Created with IntelliJ IDEA.
  *
- * @Description: TODO
+ * @Description: 类反射读取私有属性
  * @Author: csx
  * @Date: 2018/02/01
  */

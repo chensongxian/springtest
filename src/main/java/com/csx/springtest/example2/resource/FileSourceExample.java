@@ -13,7 +13,7 @@ import java.io.OutputStream;
 /**
  * Created with IntelliJ IDEA.
  *
- * @Description: TODO
+ * @Description: 资源访问
  * @Author: csx
  * @Date: 2018/02/01
  */
@@ -21,16 +21,20 @@ public class FileSourceExample {
     public static void main(String[] args) throws IOException {
         String filePath="F:\\idea\\springtest\\src\\main\\resources\\com.csx.springtest.example2.conf\\file1.txt";
 
+        // 1. 使用系统文件路径方式加载文件
         WritableResource wr=new PathResource(filePath);
 
+        // 2. 使用类路径方式加载文件
         Resource re=new ClassPathResource("com/csx/springtest/example2/conf/file1.txt");
 
+        // 3. 使用WritableResource接口写资源文件
         OutputStream outputStream = wr.getOutputStream();
 
         outputStream.write("测试写入".getBytes());
 
         outputStream.close();
 
+        // 4. 使用Resource接口读资源文件
         InputStream wrInputStream = wr.getInputStream();
 
         InputStream reInputStream = re.getInputStream();
