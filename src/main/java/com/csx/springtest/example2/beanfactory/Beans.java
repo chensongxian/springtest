@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * Created with IntelliJ IDEA.
  *
- * @Description: TODO
+ * @Description: 注解方式注册一个Bean
  * @Author: csx
  * @Date: 2018/02/01
  */

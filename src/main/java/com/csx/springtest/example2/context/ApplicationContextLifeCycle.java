@@ -9,7 +9,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 /**
  * Created with IntelliJ IDEA.
  *
- * @Description: TODO
+ * @Description: ApplicationContext生命周期
  * @Author: csx
  * @Date: 2018/02/01
  */

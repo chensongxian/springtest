@@ -9,7 +9,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 /**
  * Created with IntelliJ IDEA.
  *
- * @Description: TODO
+ * @Description: 使用注解加载一个Bean
  * @Author: csx
  * @Date: 2018/02/01
  */
